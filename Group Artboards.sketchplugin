@@ -1,4 +1,4 @@
-// (command control shift 1)
+// (control option 1)
 
 // User-adjustable:
 
@@ -24,44 +24,61 @@ var max_bottom = 0;
 
 var prev_group_item = null;
 var curr_row_height = 0;
+var found_headers = false;
 var ran_once = false;
 
 [[doc currentPage] deselectAllLayers];
 var all_artboards = [[doc currentPage] artboards];
 
 for (var i = [all_artboards count] - 1; i >= 0 ; i--) {
-	var new_x, new_y;
-
 	var ab = [all_artboards objectAtIndex:i];
 	var artboard_name = [ab name];
 
 	var m = artboard_name.match(/^#+/i);
-
-	if ((m != null) && (ran_once == true)) {
-		curr_x = start_x;
-		curr_y = curr_row_height + spacing_y;
-		curr_row_height = 0;
+	if (m != null) {
+		found_headers = true;
 	}
-
-	new_x = curr_x;
-	new_y = curr_y;
-
-	[[ab frame] setX:new_x];
-	[[ab frame] setY:new_y];
-
-	var artboard_right = [[ab absoluteRect] x] + [[ab absoluteRect] width];
-	var artboard_bottom = [[ab absoluteRect] y] + [[ab absoluteRect] height];
-
-	max_right = (artboard_right > max_right) ? artboard_right : max_right;
-	max_bottom = (artboard_bottom > max_bottom) ? artboard_bottom : max_bottom;
-	curr_row_height = (artboard_bottom > curr_row_height) ? artboard_bottom : curr_row_height;
-
-	curr_x += [[ab absoluteRect] width] + spacing_x;
-
-	ran_once = true;
 }
 
-if (zoom_to_fit == true) {
-//	var all_rect = [{"x": start_x,"y": start_y},{"width": max_right,"height": max_bottom}];
-//	doc.currentView().zoomToFitRect_(all_rect);
+if (found_headers == true) {
+	for (var i = [all_artboards count] - 1; i >= 0 ; i--) {
+		var new_x, new_y;
+
+		var ab = [all_artboards objectAtIndex:i];
+		var artboard_name = [ab name];
+
+		var m = artboard_name.match(/^#+/i);
+
+		if ((m != null) && (ran_once == true)) {
+			curr_x = start_x;
+			curr_y = curr_row_height + spacing_y;
+			curr_row_height = 0;
+		}
+
+		new_x = curr_x;
+		new_y = curr_y;
+
+		[[ab frame] setX:new_x];
+		[[ab frame] setY:new_y];
+
+		var artboard_right = [[ab absoluteRect] x] + [[ab absoluteRect] width];
+		var artboard_bottom = [[ab absoluteRect] y] + [[ab absoluteRect] height];
+
+		max_right = (artboard_right > max_right) ? artboard_right : max_right;
+		max_bottom = (artboard_bottom > max_bottom) ? artboard_bottom : max_bottom;
+		curr_row_height = (artboard_bottom > curr_row_height) ? artboard_bottom : curr_row_height;
+
+		curr_x += [[ab absoluteRect] width] + spacing_x;
+
+		ran_once = true;
+	}
+
+	if (zoom_to_fit == true) {
+		// var all_rect = [{"x": start_x,"y": start_y},{"width": max_right,"height": max_bottom}];
+		// doc.currentView().zoomToFitRect_(all_rect);
+	}
+	[doc showMessage:"Artboards grouped."];
+} else {
+	var app = [NSApplication sharedApplication];
+	[app displayDialog:"Canceling. No artboard names start with “#”" withTitle:"Group Artboards"];
 }

@@ -102,3 +102,5 @@ if (zoom_to_fit == true) {
 //	var all_rect = [{"x": start_x,"y": start_y},{"width": max_right,"height": max_bottom}];
 //	doc.currentView().zoomToFitRect_(all_rect);
 }
+
+[doc showMessage:"Artboards arranged."];
