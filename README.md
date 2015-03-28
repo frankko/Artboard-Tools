@@ -28,6 +28,9 @@ Useful if you’re designing a bunch of screens and you wanted each section to b
 
 The pattern searched for goes like this: 'group name' + '\-\-' + 'whatever'. For example, 'headers\-\-version-A', 'headers\-\-version-B', 'sidebars\-\-version-A', 'footers\-\-version-A', 'footers\-\-version-B'. That would create three rows.
 
+* * * * *
+
+**Note that for both plugins, the artboards are arranged by their order in the layer list _from top to bottom_. Current artboard position on the canvas is ignored.**
 
 * * * * *
 
