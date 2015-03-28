@@ -16,7 +16,7 @@ Max number of columns and space between artboards is editable in the .sketchplug
 
 ## Group Artboards (ctrl+opt+1)
 
-Similar to “Arrange Artboards”, but more complicated. Instead of a predefined number of artboards per row, the plugin searches for artboards whose names begin with a `#` and starts a new row with that artboard. Like so:
+Similar to “Arrange Artboards”, but more complicated. Instead of a predefined number of artboards per row, the plugin searches for artboards whose names match a pattern and includes them all on one row, starting a new row when the pattern is broken. Like so:
 
 ```
 A A
@@ -26,7 +26,8 @@ A A A
 
 Useful if you’re designing a bunch of screens and you wanted each section to be its own row.
 
-[You should have at least two artboards whose name begin with a `#` otherwise you’ll just get one potentially really long row. But hey, maybe that’s something you’d be in to.]
+The pattern searched for goes like this: 'group name' + '\-\-' + 'whatever'. For example, 'headers\-\-version-A', 'headers\-\-version-B', 'sidebars\-\-version-A', 'footers\-\-version-A', 'footers\-\-version-B'. That would create three rows.
+
 
 * * * * *
 
