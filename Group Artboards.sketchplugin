@@ -33,7 +33,7 @@ for (var i = [all_artboards count] - 1; i >= 0 ; i--) {
 	var ab = [all_artboards objectAtIndex:i];
 	var artboard_name = [ab name];
 
-	var m = artboard_name.match(/^([^-]+)--.+/i);
+	var m = artboard_name.match(/^(.+)--.+/i);
 	if (m != null) {
 		found_headers = true;
 	}
@@ -46,7 +46,7 @@ if (found_headers == true) {
 		var ab = [all_artboards objectAtIndex:i];
 		var artboard_name = [ab name];
 
-		var m = artboard_name.match(/^([^-]+)--.+/i);
+		var m = artboard_name.match(/^(.+)--.+/i);
 
 		if (m != null) {
 			var this_group = m[1];
