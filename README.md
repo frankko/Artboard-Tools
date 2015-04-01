@@ -30,7 +30,7 @@ The pattern searched for goes like this: 'group name' + '\-\-' + 'whatever'. For
 
 * * * * *
 
-**Note that for both plugins, the artboards are arranged by their order in the layer list _from top to bottom_. Current artboard position on the canvas is ignored.**
+**Note that for both plugins, the artboards are arranged by their order in the layer list _from bottom to top_. Current artboard position on the canvas is ignored.**
 
 * * * * *
 

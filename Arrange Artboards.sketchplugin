@@ -5,14 +5,14 @@
 var group_related = true;
 var zoom_to_fit = true;
 
-var start_x = 16;
-var start_y = 16;
+var start_x = 20;
+var start_y = 20;
 
-var spacing_x = 256;
-var spacing_y = 256;
+var spacing_x = 200;
+var spacing_y = 200;
 var spacing_group = Math.round(spacing_x / 2);
 
-var max_cols = 9;
+var max_cols = 10;
 
 
 
@@ -34,7 +34,7 @@ var curr_row_height = 0;
 [[doc currentPage] deselectAllLayers];
 var all_artboards = [[doc currentPage] artboards];
 
-for (var i = [all_artboards count] - 1; i >= 0 ; i--) {
+for (var i = 0; i < [all_artboards count]; i++) {
 	var new_x, new_y;
 	var up_counts = true;
 
@@ -56,8 +56,8 @@ for (var i = [all_artboards count] - 1; i >= 0 ; i--) {
 
 		prev_group_item = ab;
 
-		if ((i - 1) >= 0) {
-			artboard_next_name = [[all_artboards objectAtIndex:i-1] name];
+		if ((i + 1) < [all_artboards count]) {
+			artboard_next_name = [[all_artboards objectAtIndex:i+1] name];
 			var m_next = artboard_next_name.match(/^(.+)--([0-9]+)$/i);
 			if (m_next != null) {
 				if (m_next[1] == this_group) {
