@@ -30,7 +30,7 @@ The pattern searched for goes like this: 'group name' + '\-\-' + 'whatever'. For
 
 ## Select Prev Artboard ( ctrl+[ ), Select Next Artboard ( ctrl+] )
 
-Selects the previous artboard in the layer list or selects the next artboard in the layer list and zooms that artboard to fit, depending on which you invoke.
+Selects the previous artboard in the layer list or selects the next artboard in the layer list, depending on which you invoke, and zooms that artboard to fit the screen.
 
 If no artboard (or a layer within an artboard) is selected, Prev will select the last (top-most) artboard in the layer list, Next the first (bottom-most) artboard.
 
