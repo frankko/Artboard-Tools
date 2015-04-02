@@ -15,10 +15,6 @@ var spacing_group = Math.round(spacing_x / 2);
 var max_cols = 10;
 
 
-
-
-
-
 // Main junk, don't tread on me
 
 var curr_x = start_x;
@@ -99,8 +95,13 @@ for (var i = 0; i < [all_artboards count]; i++) {
 }
 
 if (zoom_to_fit == true) {
-//	var all_rect = [{"x": start_x,"y": start_y},{"width": max_right,"height": max_bottom}];
-//	doc.currentView().zoomToFitRect_(all_rect);
+	var all_rect = [GKRect new];
+	all_rect.x = start_x;
+	all_rect.y = start_y;
+	all_rect.width = max_right;
+	all_rect.height = max_bottom;
+
+	[[doc currentView] zoomToFitRect:all_rect];
 }
 
 [doc showMessage:"Artboards arranged."];
