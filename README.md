@@ -1,6 +1,13 @@
 # Artboard Tools (Sketch plugins)
 
-Contains two plugins:
+Contains four plugins:
+
+## Select Prev Artboard (ctrl+[), Select Next Artboard (ctrl+])
+
+Selects the previous artboard in the layer list or selects the next artboard in the layer list and zooms that artboard to fit, depending on which you invoke.
+
+If no artboard (or a layer within an artboard) is selected, Prev will select the last (top-most) artboard in the layer list, Next the first (bottom-most) artboard.
+
 
 ## Arrange Artboards (cmd+ctrl+1)
 
@@ -30,7 +37,7 @@ The pattern searched for goes like this: 'group name' + '\-\-' + 'whatever'. For
 
 * * * * *
 
-**Note that for both plugins, the artboards are arranged by their order in the layer list _from bottom to top_. Current artboard position on the canvas is ignored.**
+**Note that for all plugins, the artboard order is determined by the artboard's order in the layer list _from bottom to top_. Current artboard position on the canvas is ignored.**
 
 * * * * *
 

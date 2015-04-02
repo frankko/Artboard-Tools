@@ -1,0 +1,42 @@
+// (control ])
+
+var target_artboard;
+
+if ([selection count] > 0) {
+	var selected_artboard = [selection objectAtIndex:0];
+
+	while([selected_artboard parentGroup] != [doc currentPage]) {
+		selected_artboard = [selected_artboard parentGroup];
+	}
+	
+	var selected_artboard_name = [selected_artboard name];
+	var all_artboards = [[doc currentPage] artboards];
+
+	var selected_index = -1;
+
+	for (var i = 0; i < [all_artboards count]; i++) {
+		var ab = [all_artboards objectAtIndex:i];
+
+		if ([ab name] == selected_artboard_name) {
+			selected_index = i;
+			break;
+		}
+	}
+	if (selected_index >= 0) {
+		var next_index = selected_index + 1;
+		if (next_index >= [all_artboards count]) {
+			next_index = 0;
+		}
+		target_artboard = [all_artboards objectAtIndex:next_index];
+	} else {
+		target_artboard = false;
+	}
+} else {
+	var all_artboards = [[doc currentPage] artboards];
+	target_artboard = [all_artboards objectAtIndex:0];
+}
+
+if (target_artboard != false) {
+	[[doc currentView] zoomToFitRect:[target_artboard absoluteRect]];
+	[target_artboard select:true byExpandingSelection:false];
+}
