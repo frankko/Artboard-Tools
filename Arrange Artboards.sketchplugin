@@ -9,7 +9,7 @@ var start_x = 20;
 var start_y = 20;
 
 var spacing_x = 200;
-var spacing_y = 200;
+var spacing_y = 400;
 var spacing_group = Math.round(spacing_x / 2);
 
 var max_cols = 10;
