@@ -2,14 +2,14 @@
 
 Contains four plugins:
 
-## Select Prev Artboard (ctrl+[), Select Next Artboard (ctrl+])
+## Select Prev Artboard ( ctrl+[ ), Select Next Artboard ( ctrl+] )
 
 Selects the previous artboard in the layer list or selects the next artboard in the layer list and zooms that artboard to fit, depending on which you invoke.
 
 If no artboard (or a layer within an artboard) is selected, Prev will select the last (top-most) artboard in the layer list, Next the first (bottom-most) artboard.
 
 
-## Arrange Artboards (cmd+ctrl+1)
+## Arrange Artboards ( cmd+ctrl+1 )
 
 Selects all artboards and arranges them in a grid. Like so:
 
@@ -21,7 +21,7 @@ A A
 
 Max number of columns and space between artboards is editable in the .sketchplugin file.
 
-## Group Artboards (ctrl+opt+1)
+## Group Artboards ( ctrl+opt+1 )
 
 Similar to “Arrange Artboards”, but more complicated. Instead of a predefined number of artboards per row, the plugin searches for artboards whose names match a pattern and includes them all on one row, starting a new row when the pattern is broken. Like so:
 
