@@ -2,13 +2,6 @@
 
 Contains four plugins:
 
-## Select Prev Artboard ( ctrl+[ ), Select Next Artboard ( ctrl+] )
-
-Selects the previous artboard in the layer list or selects the next artboard in the layer list and zooms that artboard to fit, depending on which you invoke.
-
-If no artboard (or a layer within an artboard) is selected, Prev will select the last (top-most) artboard in the layer list, Next the first (bottom-most) artboard.
-
-
 ## Arrange Artboards ( cmd+ctrl+1 )
 
 Selects all artboards and arranges them in a grid. Like so:
@@ -34,6 +27,12 @@ A A A
 Useful if you’re designing a bunch of screens and you wanted each section to be its own row.
 
 The pattern searched for goes like this: 'group name' + '\-\-' + 'whatever'. For example, 'headers\-\-version-A', 'headers\-\-version-B', 'sidebars\-\-version-A', 'footers\-\-version-A', 'footers\-\-version-B'. That would create three rows.
+
+## Select Prev Artboard ( ctrl+[ ), Select Next Artboard ( ctrl+] )
+
+Selects the previous artboard in the layer list or selects the next artboard in the layer list and zooms that artboard to fit, depending on which you invoke.
+
+If no artboard (or a layer within an artboard) is selected, Prev will select the last (top-most) artboard in the layer list, Next the first (bottom-most) artboard.
 
 * * * * *
 
