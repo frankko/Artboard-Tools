@@ -1,4 +1,4 @@
-# Arrange Artboards (Sketch plugins)
+# Artboard Tools (Sketch plugins)
 
 Contains two plugins:
 
