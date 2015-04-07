@@ -92,6 +92,7 @@ var group_artboards = function (context) {
 			all_rect.height = max_bottom;
 
 //			[view zoomToFitRect:all_rect];
+			[view centerLayersInCanvas];
 		}
 		[doc showMessage:"Artboards grouped."];
 	} else {

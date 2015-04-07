@@ -106,6 +106,7 @@ var arrange_artboards = function (context) {
 		all_rect.height = max_bottom;
 
 //		[view zoomToFitRect:all_rect];
+		[view centerLayersInCanvas];
 	}
 
 	[doc showMessage:"Artboards arranged."];

@@ -13,8 +13,9 @@ var fit_artboard = function (context) {
 			selected_artboard = [selected_artboard parentGroup];
 		}
 
-		[view zoomToFitRect:[selected_artboard rect]];
+//		[view zoomToFitRect:[selected_artboard rect]];
 		[selected_artboard select:true byExpandingSelection:false];
+		[view zoomToSelection];
 	}
 };
 
@@ -62,8 +63,9 @@ var select_prev = function (context) {
 
 	if (target_artboard != false) {
 //		[view centerRect:[target_artboard absoluteRect]];
-		[view zoomToFitRect:[target_artboard rect]];
+//		[view zoomToFitRect:[target_artboard rect]];
 		[target_artboard select:true byExpandingSelection:false];
+		[view zoomToSelection];
 	}
 };
 
@@ -110,7 +112,8 @@ var select_next = function (context) {
 	}
 
 	if (target_artboard != false) {
-		[view zoomToFitRect:[target_artboard rect]];
+//		[view zoomToFitRect:[target_artboard rect]];
 		[target_artboard select:true byExpandingSelection:false];
+		[view zoomToSelection];
 	}
 };
