@@ -9,11 +9,10 @@ var fit_artboard = function (context) {
 	if ([selection count] > 0) {
 		var selected_artboard = [selection objectAtIndex:0];
 
-		while([selected_artboard parentGroup] != page) {
+		while ([selected_artboard parentGroup] != page) {
 			selected_artboard = [selected_artboard parentGroup];
 		}
 
-//		[view zoomToFitRect:[selected_artboard rect]];
 		[selected_artboard select:true byExpandingSelection:false];
 		[view zoomToSelection];
 	}
@@ -30,7 +29,7 @@ var select_prev = function (context) {
 	if ([selection count] > 0) {
 		var selected_artboard = [selection objectAtIndex:0];
 
-		while([selected_artboard parentGroup] != page) {
+		while ([selected_artboard parentGroup] != page) {
 			selected_artboard = [selected_artboard parentGroup];
 		}
 	
@@ -62,8 +61,6 @@ var select_prev = function (context) {
 	}
 
 	if (target_artboard != false) {
-//		[view centerRect:[target_artboard absoluteRect]];
-//		[view zoomToFitRect:[target_artboard rect]];
 		[target_artboard select:true byExpandingSelection:false];
 		[view zoomToSelection];
 	}
@@ -80,7 +77,7 @@ var select_next = function (context) {
 	if ([selection count] > 0) {
 		var selected_artboard = [selection objectAtIndex:0];
 
-		while([selected_artboard parentGroup] != page) {
+		while ([selected_artboard parentGroup] != page) {
 			selected_artboard = [selected_artboard parentGroup];
 		}
 	
@@ -112,7 +109,6 @@ var select_next = function (context) {
 	}
 
 	if (target_artboard != false) {
-//		[view zoomToFitRect:[target_artboard rect]];
 		[target_artboard select:true byExpandingSelection:false];
 		[view zoomToSelection];
 	}

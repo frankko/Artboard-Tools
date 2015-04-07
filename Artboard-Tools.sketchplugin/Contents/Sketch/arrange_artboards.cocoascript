@@ -99,13 +99,6 @@ var arrange_artboards = function (context) {
 	}
 
 	if (zoom_to_fit == true) {
-		var all_rect = [GKRect new];
-		all_rect.x = start_x;
-		all_rect.y = start_y;
-		all_rect.width = max_right;
-		all_rect.height = max_bottom;
-
-//		[view zoomToFitRect:all_rect];
 		[view centerLayersInCanvas];
 	}
 
