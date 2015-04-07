@@ -28,9 +28,9 @@ Useful if you’re designing a bunch of screens and you wanted each section to b
 
 The pattern searched for goes like this: 'group name' + '\-\-' + 'whatever'. For example, 'headers\-\-version-A', 'headers\-\-version-B', 'sidebars\-\-version-A', 'footers\-\-version-A', 'footers\-\-version-B'. That would create three rows.
 
-## Select Prev Artboard ( ctrl+[ ), Select Next Artboard ( ctrl+] )
+## Select Prev Artboard ( cmd+[ ), Select Next Artboard ( cmd+] )
 
-Selects the previous artboard in the layer list or selects the next artboard in the layer list, depending on which you invoke, and zooms that artboard to fit the screen.
+Selects the previous artboard in the layer list or selects the next artboard in the layer list, depending on which you invoke, and zooms that artboard to fit the screen. (Think of it like next/previous tab in your browser.)
 
 If no artboard (or a layer within an artboard) is selected, Prev will select the last (top-most) artboard in the layer list, Next the first (bottom-most) artboard.
 

@@ -92,5 +92,5 @@ if (found_headers == true) {
 	[doc showMessage:"Artboards grouped."];
 } else {
 	var app = [NSApplication sharedApplication];
-	[app displayDialog:"Canceling. No artboard names start with “#”" withTitle:"Group Artboards"];
+	[app displayDialog:"Canceling. No artboard names contain “--”" withTitle:"Group Artboards"];
 }
