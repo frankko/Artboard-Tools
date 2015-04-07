@@ -1,3 +1,7 @@
+**These plugins have been updated for Sketch 3.3's new plugin format. I don't know if they'll still work with Sketch 3.2 and lower. Probably not.**
+
+* * * * *
+
 # Artboard Tools (Sketch plugins)
 
 Contains four plugins:

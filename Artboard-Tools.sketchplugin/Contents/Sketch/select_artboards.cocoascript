@@ -1,0 +1,116 @@
+var fit_artboard = function (context) {
+	var doc = context.document;
+	var selection = context.selection;
+	var page = [doc currentPage];
+	var view = [doc currentView];
+
+	var target_artboard;
+
+	if ([selection count] > 0) {
+		var selected_artboard = [selection objectAtIndex:0];
+
+		while([selected_artboard parentGroup] != page) {
+			selected_artboard = [selected_artboard parentGroup];
+		}
+
+		[view zoomToFitRect:[selected_artboard rect]];
+		[selected_artboard select:true byExpandingSelection:false];
+	}
+};
+
+var select_prev = function (context) {
+	var doc = context.document;
+	var selection = context.selection;
+	var page = [doc currentPage];
+	var view = [doc currentView];
+
+	var target_artboard;
+
+	if ([selection count] > 0) {
+		var selected_artboard = [selection objectAtIndex:0];
+
+		while([selected_artboard parentGroup] != page) {
+			selected_artboard = [selected_artboard parentGroup];
+		}
+	
+		var selected_artboard_name = [selected_artboard name];
+		var all_artboards = [page artboards];
+
+		var selected_index = -1;
+
+		for (var i = 0; i < [all_artboards count]; i++) {
+			var ab = [all_artboards objectAtIndex:i];
+
+			if ([ab name] == selected_artboard_name) {
+				selected_index = i;
+				break;
+			}
+		}
+		if (selected_index >= 0) {
+			var prev_index = selected_index - 1;
+			if (prev_index < 0) {
+				prev_index = [all_artboards count] - 1;
+			}
+			target_artboard = [all_artboards objectAtIndex:prev_index];
+		} else {
+			target_artboard = false;
+		}
+	} else {
+		var all_artboards = [page artboards];
+		target_artboard = [all_artboards objectAtIndex:[all_artboards count] - 1];
+	}
+
+	if (target_artboard != false) {
+//		[view centerRect:[target_artboard absoluteRect]];
+		[view zoomToFitRect:[target_artboard rect]];
+		[target_artboard select:true byExpandingSelection:false];
+	}
+};
+
+var select_next = function (context) {
+	var doc = context.document;
+	var selection = context.selection;
+	var page = [doc currentPage];
+	var view = [doc currentView];
+
+	var target_artboard;
+
+	if ([selection count] > 0) {
+		var selected_artboard = [selection objectAtIndex:0];
+
+		while([selected_artboard parentGroup] != page) {
+			selected_artboard = [selected_artboard parentGroup];
+		}
+	
+		var selected_artboard_name = [selected_artboard name];
+		var all_artboards = [page artboards];
+
+		var selected_index = -1;
+
+		for (var i = 0; i < [all_artboards count]; i++) {
+			var ab = [all_artboards objectAtIndex:i];
+
+			if ([ab name] == selected_artboard_name) {
+				selected_index = i;
+				break;
+			}
+		}
+		if (selected_index >= 0) {
+			var next_index = selected_index + 1;
+			if (next_index >= [all_artboards count]) {
+				next_index = 0;
+			}
+			target_artboard = [all_artboards objectAtIndex:next_index];
+		} else {
+			target_artboard = false;
+		}
+	} else {
+		var all_artboards = [page artboards];
+		target_artboard = [all_artboards objectAtIndex:0];
+	}
+
+	if (target_artboard != false) {
+		[view zoomToFitRect:[target_artboard rect]];
+		[target_artboard select:true byExpandingSelection:false];
+	}
+};

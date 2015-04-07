@@ -1,0 +1,57 @@
+{
+	"author" : "Frank Kolodziej",
+	"commands" : [
+		{
+			"script" : "arrange_artboards.cocoascript",
+			"handler": "arrange_artboards",
+			"shortcut" : "control command 1",
+			"name" : "Arrange Artboards",
+			"identifier" : "101_arrange_artboards"
+		},
+		{
+			"script" : "group_artboards.cocoascript",
+			"handler": "group_artboards",
+			"shortcut" : "control option 1",
+			"name" : "Group Artboards",
+			"identifier" : "201_group_artboards"
+		},
+		{
+			"script" : "select_artboards.cocoascript",
+			"handler": "fit_artboard",
+			"shortcut" : "command 4",
+			"name" : "Zoom Artboard to Fit",
+			"identifier" : "900_fit_artboard"
+		},
+		{
+			"script" : "select_artboards.cocoascript",
+			"handler": "select_prev",
+			"shortcut" : "command [",
+			"name" : "Select Previous Artboard",
+			"identifier" : "901_select_prev_artboard"
+		},
+		{
+			"script" : "select_artboards.cocoascript",
+			"handler": "select_next",
+			"shortcut" : "command ]",
+			"name" : "Select Next Artboard",
+			"identifier" : "902_select_next_artboard"
+		}
+	],
+	"menu" : {
+		"items" : [
+			"101_arrange_artboards",
+			"201_group_artboards",
+			"900_fit_artboard",
+			"901_select_prev_artboard",
+			"902_select_next_artboard"
+		],
+		"title" : "Artboard Tools"
+	},
+	"homepage" : "https://github.com/frankko/Artboard-Tools",
+	"identifier" : "io.kolo.sketch.artboard-tools",
+    "compatibleVersion": "3.3",
+	"version" : "2.0",
+	"description" : "artboard tools",
+	"authorEmail" : "frank@kolo.io",
+	"name" : "Artboard Tools"
+}
