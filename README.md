@@ -36,7 +36,7 @@ The pattern searched for goes like this: ‘group name’ + ‘\-\-’ + ‘what
 
 ## Zoom Artboard to Fit ( cmd+4 )
 
-The equivalent of selecting an artboard and doing “Zoom Selection” (cmd+2), but it always zooms the whole artboard, even if you’ve selected a layer within the artboard.
+The equivalent of selecting an artboard and doing “Zoom Selection” (cmd+2), but this plugin always zooms out and centers the current artboard, even if you’ve selected a layer within the artboard.
 
 ## Select Prev Artboard ( cmd+[ ), Select Next Artboard ( cmd+] )
 
