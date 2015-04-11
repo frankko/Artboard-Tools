@@ -38,7 +38,7 @@ The pattern searched for goes like this: ‘group name’ + ‘\-\-’ + ‘what
 
 The equivalent of selecting an artboard and doing “Zoom Selection” (cmd+2), but this plugin always zooms out and centers the current artboard, even if you’ve selected a layer within the artboard.
 
-## Select Prev Artboard ( cmd+[ ), Select Next Artboard ( cmd+] )
+## Select Prev Artboard ( cmd+shift+[ ), Select Next Artboard ( cmd+shift+] )
 
 Selects the previous artboard in the layer list or selects the next artboard in the layer list, depending on which you invoke, and zooms that artboard to fit the screen. (Think of it like next/previous tab in your browser.)
 
