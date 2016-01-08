@@ -113,3 +113,19 @@ var select_next = function (context) {
     [view zoomToSelection];
   }
 };
+
+var select_all = function (context) {
+
+  var doc = context.document;
+  var page = [doc currentPage];
+  var all_artboards = [page artboards];
+  for (var i = 0; i < [all_artboards count]; i++) {
+    artboard = all_artboards[i];
+  if (i==0){
+    [artboard select:true byExpandingSelection:false];
+  } else {
+    [artboard select:true byExpandingSelection:true];
+  }
+  }
+
+};
