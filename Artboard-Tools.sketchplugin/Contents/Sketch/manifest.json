@@ -35,6 +35,13 @@
       "shortcut" : "command shift ]",
       "name" : "Select Next Artboard",
       "identifier" : "902_select_next_artboard"
+    },
+    {
+      "script" : "select_artboards.cocoascript",
+      "handler": "select_all",
+      "shortcut" : "control shift a",
+      "name" : "Select All Artboards",
+      "identifier" : "903_select_all_artboards"
     }
   ],
   "menu" : {
@@ -43,14 +50,15 @@
       "201_group_artboards",
       "900_fit_artboard",
       "901_select_prev_artboard",
-      "902_select_next_artboard"
+      "902_select_next_artboard",
+      "903_select_all_artboards"
     ],
     "title" : "Artboard Tools"
   },
   "homepage" : "https://github.com/frankko/Artboard-Tools",
   "identifier" : "io.kolo.sketch.artboard-tools",
     "compatibleVersion": "3.3",
-  "version" : "2.0",
+  "version" : "2.0.1",
   "description" : "artboard tools",
   "authorEmail" : "frank@kolo.io",
   "name" : "Artboard Tools"
