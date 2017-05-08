@@ -38,6 +38,12 @@ var group_artboards = function (context) {
   var curr_row_height = 0;
   var found_headers = false;
 
+
+  var page_name = [page name];
+  if (page_name == "Symbols") {
+    var regexp_patt = /^(.+)\/.+/i;
+  }
+
   [[doc currentPage] deselectAllLayers];
   var all_artboards = [[doc currentPage] artboards];
 

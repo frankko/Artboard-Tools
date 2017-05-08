@@ -60,7 +60,7 @@ If no artboard (or a layer within an artboard) is selected, Prev will select the
 
 ### Roadmap
 
-- due to popular demand, the group delimiter will eventually change from ‘--’ to ‘/’. This can be previewed in the Group Artboards plugin by reviewing the instructions above. If you’re opposed to the change, now is your time to make more noise than the folks that want it switched to a slash.
+- due to popular demand, the group delimiter will eventually change from ‘--’ to ‘/’. This can be previewed in the Group Artboards plugin by reviewing the instructions above. If you’re opposed to the change, now is your time to make more noise than the folks that want it switched to a slash. In the meantime, if you run Group Artboards on a page called “Symbols”, the plugin will group by ‘/’.
 
 * * * 
 
