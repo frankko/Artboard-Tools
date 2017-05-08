@@ -1,6 +1,8 @@
 var group_artboards = function (context) {
   // User-adjustable:
 
+  var use_slashes = false;
+
   var zoom_to_fit = true;
 
   var start_x = 20;
@@ -14,6 +16,12 @@ var group_artboards = function (context) {
 
 
   // Main junk, don't tread on me
+
+  if (use_slashes) {
+    var regexp_patt = /^(.+)\/.+/i;
+  } else {
+    var regexp_patt = /^(.+)--.+/i;
+  }
 
   var doc = context.document;
   var selection = context.selection;
@@ -37,7 +45,8 @@ var group_artboards = function (context) {
     var ab = [all_artboards objectAtIndex:i];
     var artboard_name = [ab name];
 
-    var m = artboard_name.match(/^(.+)--.+/i);
+//    var m = artboard_name.match(/^(.+)--.+/i);
+    var m = artboard_name.match(regexp_patt);
     if (m != null) {
       found_headers = true;
     }
@@ -50,7 +59,8 @@ var group_artboards = function (context) {
       var ab = [all_artboards objectAtIndex:i];
       var artboard_name = [ab name];
 
-      var m = artboard_name.match(/^(.+)--.+/i);
+//      var m = artboard_name.match(/^(.+)--.+/i);
+      var m = artboard_name.match(regexp_patt);
 
       if (m != null) {
         var this_group = m[1];
@@ -90,6 +100,10 @@ var group_artboards = function (context) {
     [doc showMessage:"Artboards grouped."];
   } else {
     var app = [NSApplication sharedApplication];
-    [app displayDialog:"Canceling. No artboard names contain “--”" withTitle:"Group Artboards"];
+    if (use_slashes) {
+      [app displayDialog:"Canceling. No artboard names contain “/”" withTitle:"Group Artboards"];
+    } else {
+      [app displayDialog:"Canceling. No artboard names contain “--”" withTitle:"Group Artboards"];
+    }
   }
 };
