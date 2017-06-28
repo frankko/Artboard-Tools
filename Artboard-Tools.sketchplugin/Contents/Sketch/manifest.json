@@ -50,7 +50,7 @@
   "homepage" : "https://github.com/frankko/Artboard-Tools",
   "identifier" : "io.kolo.sketch.artboard-tools",
   "compatibleVersion": "43",
-  "version" : "2.43.1",
+  "version" : "2.43.2",
   "description" : "artboard tools",
   "authorEmail" : "frank@kolo.io",
   "name" : "Artboard Tools"

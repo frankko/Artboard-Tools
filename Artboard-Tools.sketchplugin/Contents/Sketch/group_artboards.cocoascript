@@ -5,11 +5,11 @@ var group_artboards = function (context) {
 
   var zoom_to_fit = true;
 
-  var start_x = 20;
-  var start_y = 20;
+  var start_x = 16;
+  var start_y = 16;
 
-  var spacing_x = 200;
-  var spacing_y = 200;
+  var spacing_x = 128;
+  var spacing_y = 128;
   var spacing_group = Math.round(spacing_x / 2);
 
 
@@ -44,7 +44,7 @@ var group_artboards = function (context) {
     var regexp_patt = /^(.+)\/.+/i;
   }
 
-  [[doc currentPage] deselectAllLayers];
+//  [[doc currentPage] deselectAllLayers];
   var all_artboards = [[doc currentPage] artboards];
 
   for (var i = 0; i < [all_artboards count]; i++) {

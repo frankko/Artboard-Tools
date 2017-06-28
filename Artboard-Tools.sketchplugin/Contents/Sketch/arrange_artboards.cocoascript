@@ -4,14 +4,14 @@ var arrange_artboards = function (context) {
   var group_related = true;
   var zoom_to_fit = true;
 
-  var start_x = 20;
-  var start_y = 20;
+  var start_x = 16;
+  var start_y = 16;
 
-  var spacing_x = 200;
-  var spacing_y = 400;
+  var spacing_x = 128;
+  var spacing_y = 256;
   var spacing_group = Math.round(spacing_x / 2);
 
-  var max_cols = 10;
+  var max_cols = 11;
 
 
   // Main junk, don't tread on me
@@ -31,7 +31,7 @@ var arrange_artboards = function (context) {
   var prev_group_item = null;
   var curr_row_height = 0;
 
-  [[doc currentPage] deselectAllLayers];
+//  [[doc currentPage] deselectAllLayers];
   var all_artboards = [[doc currentPage] artboards];
 
   for (var i = 0; i < [all_artboards count]; i++) {

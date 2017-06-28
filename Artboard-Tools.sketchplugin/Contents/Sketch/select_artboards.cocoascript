@@ -1,13 +1,3 @@
-var send_action = function(context,commandToPerform) {
-  var doc = context.document;
-  try {
-    [NSApp sendAction:commandToPerform to:nil from:doc];
-  } catch(e) {
-    log(e);
-  }
-};
-
-
 var fit_artboard = function (context) {
   var doc = context.document;
   var selection = context.selection;
@@ -25,6 +15,8 @@ var fit_artboard = function (context) {
 
     [selected_artboard select:true byExpandingSelection:false];
     doc.actionsController().actionForID("MSZoomToSelectionAction").zoomToSelection(nil);
+//    doc.actionsController().actionForID("MSZoomToActualSizeAction").actualSize(nil);
+//    doc.actionsController().actionForID("MSCenterSelectionInVisibleAreaAction").centerSelectionInVisibleArea(nil);
   }
 };
 
@@ -76,11 +68,6 @@ var select_prev = function (context) {
   if (target_artboard != false) {
     [target_artboard select:true byExpandingSelection:false];
     doc.actionsController().actionForID("MSZoomToSelectionAction").zoomToSelection(nil);
-    /*
-    [view actualSize];
-    [[doc currentPage] deselectAllLayers];
-    [target_artboard select:true byExpandingSelection:false];
-    */
   }
 };
 
@@ -132,11 +119,5 @@ var select_next = function (context) {
   if (target_artboard != false) {
     [target_artboard select:true byExpandingSelection:false];
     doc.actionsController().actionForID("MSZoomToSelectionAction").zoomToSelection(nil);
-
-    /*
-    [view actualSize];
-    [[doc currentPage] deselectAllLayers];
-    [target_artboard select:true byExpandingSelection:false];
-    */
   }
 };
