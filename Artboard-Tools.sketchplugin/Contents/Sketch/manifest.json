@@ -1,4 +1,5 @@
 {
+  "appcast": "https://raw.githubusercontent.com/frankko/Artboard-Tools/master/appcast.xml",
   "author" : "Frank Kolodziej",
   "commands" : [
     {
@@ -50,7 +51,7 @@
   "homepage" : "https://github.com/frankko/Artboard-Tools",
   "identifier" : "io.kolo.sketch.artboard-tools",
   "compatibleVersion": "43",
-  "version" : "2.43.2",
+  "version" : "2.43.5",
   "description" : "artboard tools",
   "authorEmail" : "frank@kolo.io",
   "name" : "Artboard Tools"

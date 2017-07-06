@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Artboard Tools</title>
+    <link>https://raw.githubusercontent.com/frankko/Artboard-Tools/master/appcast.xml</link>
+    <description>Plugins for arranging artboards and navigating between artboards.</description>
+    <language>en</language>
+      <item>
+        <title>Version 2.43.5</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Support for Sketch 45's plugin auto-updating.</li>
+            </ul>
+          ]]>
+        </description>
+        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/master.zip" sparkle:version="2.43.5" />
+      </item>
+       <item>
+        <title>Version 2.43.2</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Bug fix for Sketch 45.</li>
+            </ul>
+          ]]>
+        </description>
+        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/8b4adaeff0058aa7aaf2865ffe0ba586636dccf8.zip" sparkle:version="2.43.2" />
+      </item>
+ </channel>
+</rss>
