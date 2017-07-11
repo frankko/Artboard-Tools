@@ -1,6 +1,8 @@
 var arrange_artboards = function (context) {
   // User-adjustable:
 
+  var sort_top_to_bottom = false;
+
   var group_related = true;
   var zoom_to_fit = true;
 
@@ -33,6 +35,10 @@ var arrange_artboards = function (context) {
 
 //  [[doc currentPage] deselectAllLayers];
   var all_artboards = [[doc currentPage] artboards];
+
+  if (sort_top_to_bottom) {
+    all_artboards.reverse();
+  }
 
   for (var i = 0; i < [all_artboards count]; i++) {
     var new_x, new_y;

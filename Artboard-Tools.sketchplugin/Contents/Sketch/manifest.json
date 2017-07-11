@@ -51,8 +51,8 @@
   "homepage" : "https://github.com/frankko/Artboard-Tools",
   "identifier" : "io.kolo.sketch.artboard-tools",
   "compatibleVersion": "43",
-  "version" : "2.43.5",
-  "description" : "artboard tools",
+  "version" : "2.43.6",
+  "description" : "Plugins for arranging artboards and navigating between artboards.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Artboard Tools"
 }

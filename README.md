@@ -14,6 +14,7 @@ A A
 
 If you know what you’re doing
 
+- layer sort order can be changed from bottom-to-top to top-to-bottom by changing `var sort_top_to_bottom = false;` to `var sort_top_to_bottom = true;` in the file `Artboard-Tools.sketchplugin/Contents/Sketch/arrange_artboards.cocoascript`.
 - max number of columns and space between artboards is editable in the file `Artboard-Tools.sketchplugin/Contents/Sketch/arrange_artboards.cocoascript`.]
 
 ## Group Artboards ( ctrl+opt+1 )
@@ -33,6 +34,7 @@ The pattern searched for goes like this: ‘group name’ + ‘\-\-’ + ‘what
 If you know what you’re doing:
 
 - the separator can be changed from ‘--’ to ‘/’ by changing `var use_slashes = false;` to `var use_slashes = true;` in the file `Artboard-Tools.sketchplugin/Contents/Sketch/group_artboards.cocoascript`.
+- layer sort order can be changed from bottom-to-top to top-to-bottom by changing `var sort_top_to_bottom = false;` to `var sort_top_to_bottom = true;` in the file `Artboard-Tools.sketchplugin/Contents/Sketch/group_artboards.cocoascript`.
 - space between artboards can be edited in the file `Artboard-Tools.sketchplugin/Contents/Sketch/group_artboards.cocoascript`.
 
 ## Zoom Artboard to Fit ( cmd+4 )
@@ -61,6 +63,7 @@ If no artboard (or a layer within an artboard) is selected, Prev will select the
 ### Roadmap
 
 - due to popular demand, the group delimiter will eventually change from ‘--’ to ‘/’. This can be previewed in the Group Artboards plugin by reviewing the instructions above. If you’re opposed to the change, now is your time to make more noise than the folks that want it switched to a slash. In the meantime, if you run Group Artboards on a page called “Symbols”, the plugin will group by ‘/’.
+- added an option to sort layers from top to bottom instead of the default bottom to top. This might become the new default. 
 
 * * * 
 
