@@ -36,6 +36,13 @@
       "shortcut" : "command shift ]",
       "name" : "Select Next Artboard",
       "identifier" : "902_select_next_artboard"
+    },
+    {
+      "script" : "ArtboardTools.cocoascript",
+      "handler": "reverse_artboards_order",
+      "shortcut" : "",
+      "name" : "Reverse Artboards Order",
+      "identifier" : "999_reverse_artboards_order"
     }
   ],
   "menu" : {
@@ -44,14 +51,15 @@
       "201_group_artboards",
       "900_fit_artboard",
       "901_select_prev_artboard",
-      "902_select_next_artboard"
+      "902_select_next_artboard",
+      "999_reverse_artboards_order"
     ],
     "title" : "Artboard Tools"
   },
   "homepage" : "https://github.com/frankko/Artboard-Tools",
   "identifier" : "io.kolo.sketch.artboard-tools",
   "compatibleVersion": "43",
-  "version" : "2.43.7",
+  "version" : "2.43.8",
   "description" : "Plugins for arranging artboards and navigating between artboards.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Artboard Tools"

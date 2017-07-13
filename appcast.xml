@@ -6,6 +6,17 @@
     <description>Plugins for arranging artboards and navigating between artboards.</description>
     <language>en</language>
       <item>
+        <title>Version 2.43.8</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>New command: Reverse Artboards Order. See README</li>
+            </ul>
+          ]]>
+        </description>
+        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/master.zip" sparkle:version="2.43.8" />
+      </item>
+      <item>
         <title>Version 2.43.7</title>
         <description>
           <![CDATA[
@@ -15,7 +26,7 @@
             </ul>
           ]]>
         </description>
-        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/master.zip" sparkle:version="2.43.7" />
+        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/2743445152befaab2bfa18e045f384db0a2e023f.zip" sparkle:version="2.43.7" />
       </item>
       <item>
         <title>Version 2.43.6</title>

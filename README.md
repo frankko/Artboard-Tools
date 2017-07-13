@@ -1,6 +1,6 @@
 # Artboard Tools (Sketch plugins)
 
-Contains five plugins:
+Contains six plugins:
 
 ## Arrange Artboards ( cmd+ctrl+1 )
 
@@ -35,6 +35,28 @@ The equivalent of selecting an artboard and doing “Zoom Selection” (cmd+2), 
 Selects the previous artboard in the layer list or selects the next artboard in the layer list, depending on which you invoke, and zooms that artboard to fit the screen. (Think of it like next/previous tab in your browser.)
 
 If no artboard (or a layer within an artboard) is selected, Prev will select the last (top-most) artboard in the layer list, Next the first (bottom-most) artboard.
+
+## Reverse Artboards Order
+
+**[New]** Reverses the artboards in the layer list. If your layer list looks like this:
+
+```
+frog
+pig
+chicken
+lizard
+```
+
+it will change to
+
+```
+lizard
+chicken
+pig
+frog
+```
+
+It doesn't sort the layers by name first. It doesn't move any artboard's position on the canvas. It just moves the top-most artboard to the bottom of the list, the bottom-most to the top, and so on. (Useful if you use a third-party service that sorts artboards the opposite way that you do.)
 
 * * * * *
 

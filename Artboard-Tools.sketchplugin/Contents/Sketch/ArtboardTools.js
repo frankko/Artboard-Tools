@@ -237,6 +237,20 @@ var KOLOArtboardTools = {
   //    doc.actionsController().actionForID("MSCenterSelectionInVisibleAreaAction").centerSelectionInVisibleArea(nil);
     }
   },
+  "reverseArtboardsOrder": function (context) {
+    var all_artboards = context.document.currentPage().artboards();
+    var sorted_artboards = [];
+
+    for (var j = 0; j < [all_artboards count]; j++) {
+      var ab = [all_artboards objectAtIndex:j];
+      sorted_artboards.push(ab);
+    }
+
+    for (var i = 0; i < sorted_artboards.length; i++) {
+      var ab = sorted_artboards[i];
+      [MSLayerMovement moveToBack:[ab]];
+    }
+  },
   "selectPreviousArtboard": function (context) {
     var doc = context.document;
     var selection = context.selection;

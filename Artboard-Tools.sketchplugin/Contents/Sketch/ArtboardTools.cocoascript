@@ -15,3 +15,6 @@ var select_prev = function (context) {
 var select_next = function (context) {
   KOLOArtboardTools.selectNextArtboard(context);
 };
+var reverse_artboards_order = function (context) {
+  KOLOArtboardTools.reverseArtboardsOrder(context);
+};
