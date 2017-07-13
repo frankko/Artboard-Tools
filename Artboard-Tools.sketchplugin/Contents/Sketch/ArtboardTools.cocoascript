@@ -1,0 +1,17 @@
+@import "ArtboardTools.js"
+
+var arrange_artboards = function (context) {
+  KOLOArtboardTools.arrangeArtboards(context);
+};
+var group_artboards = function (context) {
+  KOLOArtboardTools.groupArtboards(context);
+};
+var fit_artboard = function (context) {
+  KOLOArtboardTools.fitArtboard(context);
+};
+var select_prev = function (context) {
+  KOLOArtboardTools.selectPreviousArtboard(context);
+};
+var select_next = function (context) {
+  KOLOArtboardTools.selectNextArtboard(context);
+};

@@ -6,6 +6,18 @@
     <description>Plugins for arranging artboards and navigating between artboards.</description>
     <language>en</language>
       <item>
+        <title>Version 2.43.7</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Bug fix relating to the new advanced option to arrange/group layers from top-to-bottom.</li>
+              <li>Select Prev/Next Artboard commands now honor that new advanced option.</li>
+            </ul>
+          ]]>
+        </description>
+        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/master.zip" sparkle:version="2.43.7" />
+      </item>
+      <item>
         <title>Version 2.43.6</title>
         <description>
           <![CDATA[
@@ -14,7 +26,7 @@
             </ul>
           ]]>
         </description>
-        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/master.zip" sparkle:version="2.43.6" />
+        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/5bfdd47cb1f1846de43a4574ef5b5c4976ac6fec.zip" sparkle:version="2.43.6" />
       </item>
       <item>
         <title>Version 2.43.5</title>

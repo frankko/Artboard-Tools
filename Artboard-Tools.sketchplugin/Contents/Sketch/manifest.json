@@ -3,35 +3,35 @@
   "author" : "Frank Kolodziej",
   "commands" : [
     {
-      "script" : "arrange_artboards.cocoascript",
+      "script" : "ArtboardTools.cocoascript",
       "handler": "arrange_artboards",
       "shortcut" : "control command 1",
       "name" : "Arrange Artboards",
       "identifier" : "101_arrange_artboards"
     },
     {
-      "script" : "group_artboards.cocoascript",
+      "script" : "ArtboardTools.cocoascript",
       "handler": "group_artboards",
       "shortcut" : "control option 1",
       "name" : "Group Artboards",
       "identifier" : "201_group_artboards"
     },
     {
-      "script" : "select_artboards.cocoascript",
+      "script" : "ArtboardTools.cocoascript",
       "handler": "fit_artboard",
       "shortcut" : "command 4",
       "name" : "Zoom Artboard to Fit",
       "identifier" : "900_fit_artboard"
     },
     {
-      "script" : "select_artboards.cocoascript",
+      "script" : "ArtboardTools.cocoascript",
       "handler": "select_prev",
       "shortcut" : "command shift [",
       "name" : "Select Previous Artboard",
       "identifier" : "901_select_prev_artboard"
     },
     {
-      "script" : "select_artboards.cocoascript",
+      "script" : "ArtboardTools.cocoascript",
       "handler": "select_next",
       "shortcut" : "command shift ]",
       "name" : "Select Next Artboard",
@@ -51,7 +51,7 @@
   "homepage" : "https://github.com/frankko/Artboard-Tools",
   "identifier" : "io.kolo.sketch.artboard-tools",
   "compatibleVersion": "43",
-  "version" : "2.43.6",
+  "version" : "2.43.7",
   "description" : "Plugins for arranging artboards and navigating between artboards.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Artboard Tools"
