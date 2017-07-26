@@ -56,7 +56,7 @@ pig
 frog
 ```
 
-It doesn't sort the layers by name first. It doesn't move any artboard's position on the canvas. It just moves the top-most artboard to the bottom of the list, the bottom-most to the top, and so on. (Useful if you use a third-party service that sorts artboards the opposite way that you do.)
+It doesn't sort the layers by name first. It doesn't move any artboard's position on the canvas. It just moves the top-most artboard to the bottom of the list, the bottom-most to the top, and so on. (Useful if you use a third-party service that sorts artboards the opposite way than you prefer.)
 
 * * * * *
 

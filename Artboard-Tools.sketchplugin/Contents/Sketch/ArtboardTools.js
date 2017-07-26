@@ -4,11 +4,11 @@ var KOLOArtboardTools = {
   "arrangeArtboards": function (context) {
     // User-adjustable:
 
-    var group_related = true;
+    var group_related = false;
     var zoom_to_fit = true;
 
-    var start_x = 16;
-    var start_y = 16;
+    var start_x = 0;
+    var start_y = 0;
 
     var spacing_x = 128;
     var spacing_y = 256;
@@ -60,7 +60,7 @@ var KOLOArtboardTools = {
         prev_group_item = ab;
 
         if ((i + 1) < sorted_artboards.length) {
-          artboard_next_name = sorted_artboards[i+1].name;
+          artboard_next_name = sorted_artboards[i+1].name();
           var m_next = artboard_next_name.match(/^(.+)--([0-9]+)$/i);
           if (m_next != null) {
             if (m_next[1] == this_group) {
@@ -112,8 +112,8 @@ var KOLOArtboardTools = {
 
     var zoom_to_fit = true;
 
-    var start_x = 16;
-    var start_y = 16;
+    var start_x = 0;
+    var start_y = 0;
 
     var spacing_x = 128;
     var spacing_y = 128;
@@ -185,6 +185,11 @@ var KOLOArtboardTools = {
           curr_x = start_x;
           curr_y = curr_row_height + spacing_y;
           curr_row_height = 0;
+        }
+
+        if (i == 0) {
+          curr_x = start_x;
+          curr_y = start_y;
         }
 
         new_x = curr_x;

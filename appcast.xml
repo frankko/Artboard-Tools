@@ -11,6 +11,7 @@
           <![CDATA[
             <ul>
               <li>New command: Reverse Artboards Order. See README</li>
+              <li>Grouped artboards now start at 0,0 (fixes #15)</li>
             </ul>
           ]]>
         </description>
