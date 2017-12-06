@@ -6,6 +6,17 @@
     <description>Plugins for arranging artboards and navigating between artboards.</description>
     <language>en</language>
       <item>
+        <title>Version 2.48.1</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Fixes for Sketch 48</li>
+            </ul>
+          ]]>
+        </description>
+        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/master.zip" sparkle:version="2.48.1" />
+      </item>
+      <item>
         <title>Version 2.43.8</title>
         <description>
           <![CDATA[
@@ -15,7 +26,7 @@
             </ul>
           ]]>
         </description>
-        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/master.zip" sparkle:version="2.43.8" />
+        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/28a25db55971356dbe4e664709d4af6452a7f87e.zip" sparkle:version="2.43.8" />
       </item>
       <item>
         <title>Version 2.43.7</title>

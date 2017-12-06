@@ -21,7 +21,11 @@ var KOLOArtboardTools = {
     var doc = context.document;
     var selection = context.selection;
     var page = [doc currentPage];
-    var view = [doc currentView];
+    if (MSApplicationMetadata.metadata().appVersion < 48) {
+      var view = [doc currentView];
+    } else {
+      var view = [doc contentDrawView];
+    }
 
     var sort_top_to_bottom = KOLOArtboardTools.sort_top_to_bottom;
 
@@ -133,7 +137,11 @@ var KOLOArtboardTools = {
     var doc = context.document;
     var selection = context.selection;
     var page = [doc currentPage];
-    var view = [doc currentView];
+    if (MSApplicationMetadata.metadata().appVersion < 48) {
+      var view = [doc currentView];
+    } else {
+      var view = [doc contentDrawView];
+    }
 
     var curr_x = start_x;
     var curr_y = start_y;
@@ -225,7 +233,11 @@ var KOLOArtboardTools = {
     var doc = context.document;
     var selection = context.selection;
     var page = [doc currentPage];
-    var view = [doc currentView];
+    if (MSApplicationMetadata.metadata().appVersion < 48) {
+      var view = [doc currentView];
+    } else {
+      var view = [doc contentDrawView];
+    }
 
     var target_artboard;
 
@@ -260,7 +272,11 @@ var KOLOArtboardTools = {
     var doc = context.document;
     var selection = context.selection;
     var page = [doc currentPage];
-    var view = [doc currentView];
+    if (MSApplicationMetadata.metadata().appVersion < 48) {
+      var view = [doc currentView];
+    } else {
+      var view = [doc contentDrawView];
+    }
 
     var current_zoom = [doc zoomValue];
   //  log(current_zoom);
@@ -309,7 +325,11 @@ var KOLOArtboardTools = {
     var doc = context.document;
     var selection = context.selection;
     var page = [doc currentPage];
-    var view = [doc currentView];
+    if (MSApplicationMetadata.metadata().appVersion < 48) {
+      var view = [doc currentView];
+    } else {
+      var view = [doc contentDrawView];
+    }
 
     var current_zoom = [doc zoomValue];
   //  log(current_zoom);
