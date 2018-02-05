@@ -13,8 +13,15 @@
       "script" : "ArtboardTools.cocoascript",
       "handler": "group_artboards",
       "shortcut" : "control option 1",
-      "name" : "Group Artboards",
+      "name" : "Group Artboards (Rows)",
       "identifier" : "201_group_artboards"
+    },
+    {
+      "script" : "ArtboardTools.cocoascript",
+      "handler": "group_artboards_columns",
+      "shortcut" : "control option 2",
+      "name" : "Group Artboards (Columns)",
+      "identifier" : "202_group_artboards_columns"
     },
     {
       "script" : "ArtboardTools.cocoascript",
@@ -49,6 +56,7 @@
     "items" : [
       "101_arrange_artboards",
       "201_group_artboards",
+      "202_group_artboards_columns",
       "900_fit_artboard",
       "901_select_prev_artboard",
       "902_select_next_artboard",
@@ -59,7 +67,7 @@
   "homepage" : "https://github.com/frankko/Artboard-Tools",
   "identifier" : "io.kolo.sketch.artboard-tools",
   "compatibleVersion": "43",
-  "version" : "2.48.1",
+  "version" : "3.48.0",
   "description" : "Plugins for arranging artboards and navigating between artboards.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Artboard Tools"

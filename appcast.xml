@@ -6,6 +6,17 @@
     <description>Plugins for arranging artboards and navigating between artboards.</description>
     <language>en</language>
       <item>
+        <title>Version 3.48.0</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>New command: Group Artboards (Columns)</li>
+            </ul>
+          ]]>
+        </description>
+        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/master.zip" sparkle:version="2.48.1" />
+      </item>
+      <item>
         <title>Version 2.48.1</title>
         <description>
           <![CDATA[
@@ -14,7 +25,7 @@
             </ul>
           ]]>
         </description>
-        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/master.zip" sparkle:version="2.48.1" />
+        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/7d1c2b5aed5174a963cb7d818f1098ec789823d3.zip" sparkle:version="2.48.1" />
       </item>
       <item>
         <title>Version 2.43.8</title>

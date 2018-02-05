@@ -229,6 +229,124 @@ var KOLOArtboardTools = {
       }
     }
   },
+  "groupArtboardsColumns": function (context) {
+    // User-adjustable:
+
+    var zoom_to_fit = true;
+
+    var start_x = 0;
+    var start_y = 0;
+
+    var spacing_x = 128;
+    var spacing_y = 128;
+    var spacing_group = Math.round(spacing_x / 2);
+
+    // Main junk, don't tread on me
+
+    var sort_top_to_bottom = KOLOArtboardTools.sort_top_to_bottom;
+    var use_slashes = KOLOArtboardTools.use_slashes;
+
+    if (use_slashes) {
+      var regexp_patt = /^(.+)\/.+/i;
+    } else {
+      var regexp_patt = /^(.+)--.+/i;
+    }
+
+    var doc = context.document;
+    var selection = context.selection;
+    var page = [doc currentPage];
+    if (MSApplicationMetadata.metadata().appVersion < 48) {
+      var view = [doc currentView];
+    } else {
+      var view = [doc contentDrawView];
+    }
+
+    var curr_x = start_x;
+    var curr_y = start_y;
+
+    var max_right = 0;
+    var max_bottom = 0;
+
+    var prev_group_item = null;
+    var curr_row_width = 0;
+    var found_headers = false;
+
+    var page_name = [page name];
+    if (page_name == "Symbols") {
+      var regexp_patt = /^(.+)\/.+/i;
+    }
+
+    var sorted_artboards = KOLOArtboardTools.util.get_all_artboards(context);
+
+    for (var j = 0; j < sorted_artboards.length; j++) {
+      var ab = sorted_artboards[j];
+      var artboard_name = [ab name];
+      var m = artboard_name.match(regexp_patt);
+      if (m != null) {
+        found_headers = true;
+      }
+    }
+
+    if (found_headers == true) {
+      for (var i = 0; i < sorted_artboards.length; i++) {
+        var new_x, new_y;
+
+        var ab = sorted_artboards[i];
+        var artboard_name = [ab name];
+
+  //      var m = artboard_name.match(/^(.+)--.+/i);
+        var m = artboard_name.match(regexp_patt);
+
+        if (m != null) {
+          var this_group = m[1];
+
+          if (this_group != prev_group_item) {
+            curr_x = curr_row_width + spacing_x;
+            curr_y = start_y;
+            curr_row_width = 0;
+          }
+
+          prev_group_item = m[1];
+        } else {
+          curr_x = curr_row_width + spacing_x;
+          curr_y = start_y;
+          curr_row_width = 0;
+        }
+
+        if (i == 0) {
+          curr_x = start_x;
+          curr_y = start_y;
+        }
+
+        new_x = curr_x;
+        new_y = curr_y;
+
+        [[ab frame] setX:new_x];
+        [[ab frame] setY:new_y];
+
+        var artboard_right = [[ab absoluteRect] x] + [[ab absoluteRect] width];
+        var artboard_bottom = [[ab absoluteRect] y] + [[ab absoluteRect] height];
+
+        max_right = (artboard_right > max_right) ? artboard_right : max_right;
+        max_bottom = (artboard_bottom > max_bottom) ? artboard_bottom : max_bottom;
+        curr_row_width = (artboard_right > curr_row_width) ? artboard_right : curr_row_width;
+
+        curr_y += [[ab absoluteRect] height] + spacing_y;
+      }
+
+      if (zoom_to_fit == true) {
+        [view centerLayersInCanvas];
+      }
+      [doc showMessage:"Artboards grouped."];
+    } else {
+      var app = [NSApplication sharedApplication];
+      if (use_slashes) {
+        [app displayDialog:"Canceling. No artboard names contain “/”" withTitle:"Group Artboards"];
+      } else {
+        [app displayDialog:"Canceling. No artboard names contain “--”" withTitle:"Group Artboards"];
+      }
+    }
+  },
   "fitArtboard": function (context) {
     var doc = context.document;
     var selection = context.selection;

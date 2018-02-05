@@ -6,6 +6,9 @@ var arrange_artboards = function (context) {
 var group_artboards = function (context) {
   KOLOArtboardTools.groupArtboards(context);
 };
+var group_artboards_columns = function (context) {
+  KOLOArtboardTools.groupArtboardsColumns(context);
+};
 var fit_artboard = function (context) {
   KOLOArtboardTools.fitArtboard(context);
 };

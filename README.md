@@ -7,24 +7,36 @@ Contains six plugins:
 Selects all artboards and arranges them in a grid. Like so:
 
 ```
-A A A A
-A A A A
-A A
+A B C D
+E F G H
+I J
 ```
 
-## Group Artboards ( ctrl+opt+1 )
+## Group Artboards (Rows) ( ctrl+opt+1 )
 
-Similar to “Arrange Artboards”, but more complicated. Instead of a predefined number of artboards per row, the plugin searches for artboards whose names match a pattern and includes them all on one row, starting a new row when the pattern is broken. Like so:
+Similar to `Arrange Artboards`, but more complicated. Instead of a predefined number of artboards per row, the plugin searches for artboards whose names match a pattern and includes them all on one row, starting a new row when the pattern is broken. Like so:
 
 ```
 A A
-A A A A A
-A A A
+B B B B B
+C C C
 ```
 
 Useful if you’re designing a bunch of screens and you wanted each section to be its own row.
 
 The pattern searched for goes like this: ‘group name’ + ‘\-\-’ + ‘whatever’. For example, ‘headers\-\-version-A’, ‘headers\-\-version-B’, ‘sidebars\-\-version-A’, ‘footers\-\-version-A’, ‘footers\-\-version-B’. That would create three rows.
+
+## Group Artboards (Columns) ( ctrl+opt+2 )
+
+**[New]** Just like `Group Artboards (Rows)` but goes vertically instead of horizontally, like so:
+
+```
+A B C
+A B C
+  B C
+  B
+  B
+```
 
 ## Zoom Artboard to Fit ( cmd+4 )
 
@@ -38,7 +50,7 @@ If no artboard (or a layer within an artboard) is selected, Prev will select the
 
 ## Reverse Artboards Order
 
-**[New]** Reverses the artboards in the layer list. If your layer list looks like this:
+Reverses the artboards in the layer list. If your layer list looks like this:
 
 ```
 frog
