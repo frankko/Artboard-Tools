@@ -1,6 +1,6 @@
 var KOLOArtboardTools = {
   "use_slashes": false,
-  "sort_top_to_bottom": false,
+  "sort_top_to_bottom": true,
   "arrangeArtboards": function (context) {
     // User-adjustable:
 

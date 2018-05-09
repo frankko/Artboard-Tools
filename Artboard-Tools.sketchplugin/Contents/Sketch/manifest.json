@@ -52,6 +52,7 @@
       "identifier" : "999_reverse_artboards_order"
     }
   ],
+  "icon": "artboard-tools.png",
   "menu" : {
     "items" : [
       "101_arrange_artboards",
@@ -66,8 +67,8 @@
   },
   "homepage" : "https://github.com/frankko/Artboard-Tools",
   "identifier" : "io.kolo.sketch.artboard-tools",
-  "compatibleVersion": "43",
-  "version" : "3.48.0",
+  "compatibleVersion": "48",
+  "version" : "3.50.0",
   "description" : "Plugins for arranging artboards and navigating between artboards.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Artboard Tools"

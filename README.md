@@ -1,6 +1,6 @@
 # Artboard Tools (Sketch plugins)
 
-Contains six plugins:
+Contains seven items:
 
 ## Arrange Artboards ( cmd+ctrl+1 )
 
