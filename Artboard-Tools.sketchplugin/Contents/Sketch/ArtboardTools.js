@@ -1,7 +1,14 @@
+var userPrefs = {
+  "sort_top_to_bottom" : true,
+  "use_slashes" : false
+};
+
 var KOLOArtboardTools = {
-  "use_slashes": false,
-  "sort_top_to_bottom": true,
   "arrangeArtboards": function (context) {
+
+
+    this.util.checkForPrefOverrides();
+
     // User-adjustable:
 
     var group_related = false;
@@ -18,6 +25,9 @@ var KOLOArtboardTools = {
 
     // Main junk, don't tread on me
 
+    log("userPrefs.sort_top_to_bottom");
+    log(userPrefs.sort_top_to_bottom);
+
     var doc = context.document;
     var selection = context.selection;
     var page = [doc currentPage];
@@ -27,7 +37,7 @@ var KOLOArtboardTools = {
       var view = [doc contentDrawView];
     }
 
-    var sort_top_to_bottom = KOLOArtboardTools.sort_top_to_bottom;
+    var sort_top_to_bottom = userPrefs.sort_top_to_bottom;
 
     var curr_x = start_x;
     var curr_y = start_y;
@@ -39,7 +49,7 @@ var KOLOArtboardTools = {
     var prev_group_item = null;
     var curr_row_height = 0;
 
-    var sorted_artboards = KOLOArtboardTools.util.get_all_artboards(context);
+    var sorted_artboards = KOLOArtboardTools.util.getAllArtboards(context);
 
     for (var i = 0; i < sorted_artboards.length; i++) {
       var new_x, new_y;
@@ -125,8 +135,8 @@ var KOLOArtboardTools = {
 
     // Main junk, don't tread on me
 
-    var sort_top_to_bottom = KOLOArtboardTools.sort_top_to_bottom;
-    var use_slashes = KOLOArtboardTools.use_slashes;
+    var sort_top_to_bottom = userPrefs.sort_top_to_bottom;
+    var use_slashes = userPrefs.use_slashes;
 
     if (use_slashes) {
       var regexp_patt = /^(.+)\/.+/i;
@@ -158,7 +168,7 @@ var KOLOArtboardTools = {
       var regexp_patt = /^(.+)\/.+/i;
     }
 
-    var sorted_artboards = KOLOArtboardTools.util.get_all_artboards(context);
+    var sorted_artboards = KOLOArtboardTools.util.getAllArtboards(context);
 
     for (var j = 0; j < sorted_artboards.length; j++) {
       var ab = sorted_artboards[j];
@@ -243,8 +253,8 @@ var KOLOArtboardTools = {
 
     // Main junk, don't tread on me
 
-    var sort_top_to_bottom = KOLOArtboardTools.sort_top_to_bottom;
-    var use_slashes = KOLOArtboardTools.use_slashes;
+    var sort_top_to_bottom = userPrefs.sort_top_to_bottom;
+    var use_slashes = userPrefs.use_slashes;
 
     if (use_slashes) {
       var regexp_patt = /^(.+)\/.+/i;
@@ -276,7 +286,7 @@ var KOLOArtboardTools = {
       var regexp_patt = /^(.+)\/.+/i;
     }
 
-    var sorted_artboards = KOLOArtboardTools.util.get_all_artboards(context);
+    var sorted_artboards = KOLOArtboardTools.util.getAllArtboards(context);
 
     for (var j = 0; j < sorted_artboards.length; j++) {
       var ab = sorted_artboards[j];
@@ -400,7 +410,7 @@ var KOLOArtboardTools = {
   //  log(current_zoom);
 
     var target_artboard;
-    var sorted_artboards = KOLOArtboardTools.util.get_all_artboards(context);
+    var sorted_artboards = KOLOArtboardTools.util.getAllArtboards(context);
 
     if ([selection count] > 0) {
       var selected_artboard = [selection objectAtIndex:0];
@@ -453,7 +463,7 @@ var KOLOArtboardTools = {
   //  log(current_zoom);
 
     var target_artboard;
-    var sorted_artboards = KOLOArtboardTools.util.get_all_artboards(context);
+    var sorted_artboards = KOLOArtboardTools.util.getAllArtboards(context);
 
     if ([selection count] > 0) {
       var selected_artboard = [selection objectAtIndex:0];
@@ -492,11 +502,11 @@ var KOLOArtboardTools = {
     }
   },
   "util": {
-    "get_all_artboards": function(context) {
+    "getAllArtboards": function(context) {
         var all_artboards = context.document.currentPage().artboards();
         var sorted_artboards = [];
 
-        if (KOLOArtboardTools.sort_top_to_bottom) {
+        if (userPrefs.sort_top_to_bottom) {
           var artboards_count = [all_artboards count];
           for (var i = (artboards_count - 1); i >= 0; i--) {
             var ab = [all_artboards objectAtIndex:i];
@@ -509,6 +519,17 @@ var KOLOArtboardTools = {
           }
         }
         return sorted_artboards;
+    },
+    "checkForPrefOverrides": function() {
+      var isDir = MOPointer.alloc().initWithValue_(false);
+//      var fileExists = NSFileManager.defaultManager().fileExistsAtPath_isDirectory('~/Library/Preferences/plugin.sketch.io.kolo.artboard-tools.js',isDir);
+      var fileExists = NSFileManager.defaultManager().fileExistsAtPath_isDirectory('manifest.json',isDir);
+      log(NSFileManager.alloc().init().currentDirectoryPath());
+      log("fileExists: " + fileExists);
+      log("isDir.value(): " + isDir.value());
+      if(fileExists && isDir.value() > 0){
+        log('it\'s a directory');
+      }
     }
   }
 };
