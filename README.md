@@ -72,7 +72,7 @@ It doesn't sort the layers by name first. It doesn't move any artboard's positio
 
 * * * * *
 
-**Note that for all plugins, the artboard order is determined by the artboard’s position in the layer list _from bottom to top_. Current artboard position on the canvas is ignored. See the Roadmap section below on how to change the order to _top to bottom_.**
+**Note that for all plugins, the artboard order is determined by the artboard’s position in the layer list _from top to bottom_. Current artboard position on the canvas is ignored.**
 
 * * * * *
 
@@ -83,10 +83,9 @@ It doesn't sort the layers by name first. It doesn't move any artboard's positio
 
 * * * * *
 
-### Roadmap
+### User Prefs
 
-- due to popular demand, the group delimiter will eventually change from ‘\-\-’ to ‘/’. This can be previewed in the Group Artboards plugin by changing `"use_slashes": false,` to `"use_slashes": true,` at the top of the file `Artboard-Tools.sketchplugin/Contents/Sketch/ArtboardTools.js`. If you’re opposed to the change, now is your time to make more noise than the folks that want it switched to a slash. In the meantime, if you run Group Artboards on a page called “Symbols”, the plugin will always group by ‘/’.
-- added an option to sort layers from top to bottom instead of the default bottom to top. This might become the new default. This can be done by changing `"sort_top_to_bottom": false,` to `"sort_top_to_bottom": true,` at the top of the file `Artboard-Tools.sketchplugin/Contents/Sketch/ArtboardTools.js`. This will apply to all plugins across the board, including Select Next/Prev Artboard.
+Persistent preference overrides for certain items are now available. See instructions in [this Gist](https://gist.github.com/frankko/5db4d671156815755fab89b4611afaba).
 
 * * * 
 

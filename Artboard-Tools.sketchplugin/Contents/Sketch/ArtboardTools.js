@@ -1,14 +1,15 @@
 var userPrefs = {
-  "sort_top_to_bottom" : true,
-  "use_slashes" : false
+  "arrange_spacing_x": 128,
+  "arrange_spacing_y": 256,
+  "arrange_max_cols": 11,
+  "group_spacing_x": 128,
+  "group_spacing_y": 128,
+  "sort_top_to_bottom": true,
+  "use_slashes": false
 };
 
 var KOLOArtboardTools = {
   "arrangeArtboards": function (context) {
-
-
-    this.util.checkForPrefOverrides();
-
     // User-adjustable:
 
     var group_related = false;
@@ -17,16 +18,13 @@ var KOLOArtboardTools = {
     var start_x = 0;
     var start_y = 0;
 
-    var spacing_x = 128;
-    var spacing_y = 256;
+    var spacing_x = userPrefs.arrange_spacing_x;
+    var spacing_y = userPrefs.arrange_spacing_y;
     var spacing_group = Math.round(spacing_x / 2);
 
-    var max_cols = 11;
+    var max_cols = userPrefs.arrange_max_cols;
 
     // Main junk, don't tread on me
-
-    log("userPrefs.sort_top_to_bottom");
-    log(userPrefs.sort_top_to_bottom);
 
     var doc = context.document;
     var selection = context.selection;
@@ -129,8 +127,8 @@ var KOLOArtboardTools = {
     var start_x = 0;
     var start_y = 0;
 
-    var spacing_x = 128;
-    var spacing_y = 128;
+    var spacing_x = userPrefs.group_spacing_x;
+    var spacing_y = userPrefs.group_spacing_y;
     var spacing_group = Math.round(spacing_x / 2);
 
     // Main junk, don't tread on me
@@ -247,8 +245,8 @@ var KOLOArtboardTools = {
     var start_x = 0;
     var start_y = 0;
 
-    var spacing_x = 128;
-    var spacing_y = 128;
+    var spacing_x = userPrefs.group_spacing_x;
+    var spacing_y = userPrefs.group_spacing_y;
     var spacing_group = Math.round(spacing_x / 2);
 
     // Main junk, don't tread on me
@@ -521,15 +519,16 @@ var KOLOArtboardTools = {
         return sorted_artboards;
     },
     "checkForPrefOverrides": function() {
+      var pathString = "~/.sketchplugin.artboard-tools.userprefs.js";
+      var path = NSString.alloc().initWithString_(pathString).stringByExpandingTildeInPath();
+
       var isDir = MOPointer.alloc().initWithValue_(false);
-//      var fileExists = NSFileManager.defaultManager().fileExistsAtPath_isDirectory('~/Library/Preferences/plugin.sketch.io.kolo.artboard-tools.js',isDir);
-      var fileExists = NSFileManager.defaultManager().fileExistsAtPath_isDirectory('manifest.json',isDir);
-      log(NSFileManager.alloc().init().currentDirectoryPath());
-      log("fileExists: " + fileExists);
-      log("isDir.value(): " + isDir.value());
-      if(fileExists && isDir.value() > 0){
-        log('it\'s a directory');
+      var fileExists = NSFileManager.defaultManager().fileExistsAtPath_isDirectory(path,isDir);
+
+      if (fileExists) {
+        return true;
       }
+      return false;
     }
   }
 };

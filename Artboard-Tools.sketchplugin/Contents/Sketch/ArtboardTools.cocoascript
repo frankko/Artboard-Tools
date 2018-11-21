@@ -1,7 +1,7 @@
 @import "ArtboardTools.js"
 
-if (KOLOArtboardTools.util.checkForPrefOverrides) {
-
+if (KOLOArtboardTools.util.checkForPrefOverrides()) {
+  @import '~/.sketchplugin.artboard-tools.userprefs.js';
 }
 
 var arrange_artboards = function (context) {
