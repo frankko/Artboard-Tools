@@ -33,14 +33,14 @@
     {
       "script" : "ArtboardTools.cocoascript",
       "handler": "select_prev",
-      "shortcut" : "command shift [",
+      "shortcut" : "command shift ]",
       "name" : "Select Previous Artboard",
       "identifier" : "901_select_prev_artboard"
     },
     {
       "script" : "ArtboardTools.cocoascript",
       "handler": "select_next",
-      "shortcut" : "command shift ]",
+      "shortcut" : "command shift [",
       "name" : "Select Next Artboard",
       "identifier" : "902_select_next_artboard"
     },
