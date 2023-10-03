@@ -6,6 +6,17 @@
     <description>Plugins for arranging artboards and navigating between artboards.</description>
     <language>en</language>
       <item>
+        <title>Version 3.98.0</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>2023-10-03: Updated for Sketch 98</li>
+            </ul>
+          ]]>
+        </description>
+        <enclosure url="https://github.com/frankko/Artboard-Tools/archive/master.zip" sparkle:version="3.98.0" />
+      </item>
+      <item>
         <title>Version 3.50.2</title>
         <description>
           <![CDATA[

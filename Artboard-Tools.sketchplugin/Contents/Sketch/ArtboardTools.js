@@ -61,8 +61,9 @@ var KOLOArtboardTools = {
           new_x = curr_x;
           new_y = curr_y;
         } else {
-          new_x = [[prev_group_item absoluteRect] x];
-          new_y = [[prev_group_item absoluteRect] y] + [[prev_group_item absoluteRect] height] + spacing_group;
+          let pregGroupItemAbsoluteRect = KOLOArtboardTools.util.absoluteRectForLayer(prev_group_item);
+          new_x = pregGroupItemAbsoluteRect.origin.x;
+          new_y = pregGroupItemAbsoluteRect.origin.y + pregGroupItemAbsoluteRect.size.height + spacing_group;
         }
 
         prev_group_item = ab;
@@ -89,15 +90,16 @@ var KOLOArtboardTools = {
       [[ab frame] setX:new_x];
       [[ab frame] setY:new_y];
 
-      var artboard_right = [[ab absoluteRect] x] + [[ab absoluteRect] width];
-      var artboard_bottom = [[ab absoluteRect] y] + [[ab absoluteRect] height];
+      let abRect = KOLOArtboardTools.util.absoluteRectForLayer(ab);
+      var artboard_right = abRect.origin.x + abRect.size.width;
+      var artboard_bottom = abRect.origin.y + abRect.size.height;
 
       max_right = (artboard_right > max_right) ? artboard_right : max_right;
       max_bottom = (artboard_bottom > max_bottom) ? artboard_bottom : max_bottom;
       curr_row_height = (artboard_bottom > curr_row_height) ? artboard_bottom : curr_row_height;
 
       if (up_counts == true) {
-        curr_x += [[ab absoluteRect] width] + spacing_x;
+        curr_x += abRect.size.width + spacing_x;
         curr_cols++;
 
         if (curr_cols >= max_cols) {
@@ -206,14 +208,16 @@ var KOLOArtboardTools = {
         [[ab frame] setX:new_x];
         [[ab frame] setY:new_y];
 
-        var artboard_right = [[ab absoluteRect] x] + [[ab absoluteRect] width];
-        var artboard_bottom = [[ab absoluteRect] y] + [[ab absoluteRect] height];
+        let abRect = KOLOArtboardTools.util.absoluteRectForLayer(ab);
+
+        var artboard_right = abRect.origin.x + abRect.size.width;
+        var artboard_bottom = abRect.origin.y + abRect.size.height;
 
         max_right = (artboard_right > max_right) ? artboard_right : max_right;
         max_bottom = (artboard_bottom > max_bottom) ? artboard_bottom : max_bottom;
         curr_row_height = (artboard_bottom > curr_row_height) ? artboard_bottom : curr_row_height;
 
-        curr_x += [[ab absoluteRect] width] + spacing_x;
+        curr_x += abRect.size.width + spacing_x;
       }
 
       if (zoom_to_fit == true) {
@@ -320,14 +324,15 @@ var KOLOArtboardTools = {
         [[ab frame] setX:new_x];
         [[ab frame] setY:new_y];
 
-        var artboard_right = [[ab absoluteRect] x] + [[ab absoluteRect] width];
-        var artboard_bottom = [[ab absoluteRect] y] + [[ab absoluteRect] height];
+        let abRect = KOLOArtboardTools.util.absoluteRectForLayer(ab);
+        var artboard_right = abRect.origin.x + abRect.size.width;
+        var artboard_bottom = abRect.origin.y + abRect.size.height;
 
         max_right = (artboard_right > max_right) ? artboard_right : max_right;
         max_bottom = (artboard_bottom > max_bottom) ? artboard_bottom : max_bottom;
         curr_row_width = (artboard_right > curr_row_width) ? artboard_right : curr_row_width;
 
-        curr_y += [[ab absoluteRect] height] + spacing_y;
+        curr_y += abRect.size.height + spacing_y;
       }
 
       if (zoom_to_fit == true) {
@@ -385,7 +390,6 @@ var KOLOArtboardTools = {
     var view = [doc contentDrawView];
 
     var current_zoom = [doc zoomValue];
-  //  log(current_zoom);
 
     var target_artboard;
     var sorted_artboards = KOLOArtboardTools.util.getAllArtboards(context);
@@ -434,7 +438,6 @@ var KOLOArtboardTools = {
     var view = [doc contentDrawView];
 
     var current_zoom = [doc zoomValue];
-  //  log(current_zoom);
 
     var target_artboard;
     var sorted_artboards = KOLOArtboardTools.util.getAllArtboards(context);
@@ -476,6 +479,12 @@ var KOLOArtboardTools = {
     }
   },
   "util": {
+    "absoluteRectForLayer" : function(layer) {
+      // thanks @rodionovd
+      let parent = layer.parentObject();
+      let relativeRect = layer.frame().rect();
+      return parent.convertRect_toCoordinateSpace_(relativeRect,nil);
+    },
     "getAllArtboards": function(context) {
         var all_artboards = context.document.currentPage().artboards();
         var sorted_artboards = [];
