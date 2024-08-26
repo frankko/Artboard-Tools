@@ -364,7 +364,7 @@ var KOLOArtboardTools = {
       }
 
       [selected_artboard select:true byExpandingSelection:false];
-      doc.actionsController().actionForID("MSZoomToSelectionAction").zoomToSelection(nil);
+      doc.actionsController().actionForID("Sketch.MSZoomToSelectionAction").zoomToSelection(nil);
   //    doc.actionsController().actionForID("MSZoomToActualSizeAction").actualSize(nil);
   //    doc.actionsController().actionForID("MSCenterSelectionInVisibleAreaAction").centerSelectionInVisibleArea(nil);
     }
@@ -428,7 +428,7 @@ var KOLOArtboardTools = {
 
     if (target_artboard != false) {
       [target_artboard select:true byExpandingSelection:false];
-      doc.actionsController().actionForID("MSZoomToSelectionAction").zoomToSelection(nil);
+      doc.actionsController().actionForID("Sketch.MSZoomToSelectionAction").zoomToSelection(nil);
     }
   },
   "selectNextArtboard": function (context) {
@@ -475,7 +475,7 @@ var KOLOArtboardTools = {
 
     if (target_artboard != false) {
       [target_artboard select:true byExpandingSelection:false];
-      doc.actionsController().actionForID("MSZoomToSelectionAction").zoomToSelection(nil);
+      doc.actionsController().actionForID("Sketch.MSZoomToSelectionAction").zoomToSelection(nil);
     }
   },
   "util": {

@@ -33,14 +33,14 @@
     {
       "script" : "ArtboardTools.cocoascript",
       "handler": "select_prev",
-      "shortcut" : "command shift [",
+      "shortcut" : "control shift [",
       "name" : "Select Previous Artboard",
       "identifier" : "901_select_prev_artboard"
     },
     {
       "script" : "ArtboardTools.cocoascript",
       "handler": "select_next",
-      "shortcut" : "command shift ]",
+      "shortcut" : "control shift ]",
       "name" : "Select Next Artboard",
       "identifier" : "902_select_next_artboard"
     },
@@ -67,8 +67,8 @@
   },
   "homepage" : "https://github.com/frankko/Artboard-Tools",
   "identifier" : "io.kolo.sketch.artboard-tools",
-  "compatibleVersion": "98",
-  "version" : "3.98.0",
+  "compatibleVersion": "100",
+  "version" : "3.100.0",
   "description" : "Plugins for arranging artboards and navigating between artboards.",
   "authorEmail" : "frank@kolo.io",
   "name" : "Artboard Tools"

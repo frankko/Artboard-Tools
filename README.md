@@ -28,7 +28,7 @@ The pattern searched for goes like this: ‘group name’ + ‘\-\-’ + ‘what
 
 ## Group Artboards (Columns) ( ctrl+opt+2 )
 
-**[New]** Just like `Group Artboards (Rows)` but goes vertically instead of horizontally, like so:
+Just like `Group Artboards (Rows)` but goes vertically instead of horizontally, like so:
 
 ```
 A B C
@@ -42,11 +42,13 @@ A B C
 
 The equivalent of selecting an artboard and doing “Zoom Selection” (cmd+2), but this plugin always zooms out and centers the current artboard, even if you’ve selected a layer within the artboard.
 
-## Select Prev Artboard ( cmd+shift+[ ), Select Next Artboard ( cmd+shift+] )
+## Select Prev Artboard ( ctrl+shift+[ ), Select Next Artboard ( ctrl+shift+] )
 
 Selects the previous artboard in the layer list or selects the next artboard in the layer list, depending on which you invoke, and zooms that artboard to fit the screen. (Think of it like next/previous tab in your browser.)
 
 If no artboard (or a layer within an artboard) is selected, Prev will select the last (top-most) artboard in the layer list, Next the first (bottom-most) artboard.
+
+**Note:** As of about Sketch 100, the old shortcuts, cmd+shift+[ and cmd+shift+], no longer work, so I changed them to ctrl+shift+[ and ctrl+shift+].
 
 ## Reverse Artboards Order
 
@@ -78,8 +80,7 @@ It doesn't sort the layers by name first. It doesn't move any artboard's positio
 
 ### Installation
 
-1. **Easy way:** Install [Sketch Toolbox](http://sketchtoolbox.com/); find “Artboard Tools”; click the “Install” button
-1. **Less-easy way:** Download the [plugin zip](https://github.com/frankko/Artboard-Tools/archive/master.zip); unzip the downloaded zip file; double-click the `Artboard-Tools.sketchplugin` file
+Download the [plugin zip](https://github.com/frankko/Artboard-Tools/archive/master.zip); unzip the downloaded zip file; double-click the `Artboard-Tools.sketchplugin` file
 
 * * * * *
 
@@ -91,7 +92,7 @@ Persistent preference overrides for certain items are now available. See instruc
 
 ### Who?
 
-I’m Frank Kolodziej, a Wichita, KS-based freelance designer & developer. I am [available for hire](http://kolo.io/). I’m [@frankko](https://twitter.com/frankko) on Twitter.
+I’m Frank Kolodziej, a Wichita, KS-based freelance designer & developer. I am [available for hire](http://kolo.io/). I’m on [BlueSky](https://bsky.app/profile/frankko.bsky.social) and [Mastodon](https://mastodon.social/@frankko).
 
 #### Other Plugins
 
